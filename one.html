@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강남 원에디션 | 퓨어 앤 미니멀</title>
+    
+    <!-- 폰트: Noto Serif KR (명조체/제목용), Noto Sans KR (고딕체/본문용) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- 아이콘 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans KR"', 'sans-serif'],
+                        serif: ['"Noto Serif KR"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            white: '#FFFFFF',
+                            bg: '#FCFCFC', // 아주 옅은 오프화이트
+                            beige: '#EBE7E0',
+                            beigedark: '#D9D2C5',
+                            silver: '#F3F4F6',
+                            silverdark: '#9CA3AF',
+                            textmain: '#1C1C1C',
+                            textsub: '#525252'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FCFCFC;
+            color: #1C1C1C;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 텍스트 드래그 색상 미니멀하게 변경 */
+        ::selection {
+            background: #EBE7E0;
+            color: #1C1C1C;
+        }
+
+        /* 스크롤 애니메이션 클래스 */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 딜레이 유틸리티 */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* 얇은 라인 디자인 */
+        .hairline {
+            height: 1px;
+            background-color: #E5E5E5;
+            width: 100%;
+        }
+
+        /* 햄버거 메뉴 애니메이션 */
+        .hamburger-line { transition: all 0.4s ease; }
+        .menu-open .line-1 { transform: translateY(6px) rotate(45deg); }
+        .menu-open .line-2 { opacity: 0; }
+        .menu-open .line-3 { transform: translateY(-6px) rotate(-45deg); }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-transparent py-6">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="flex justify-between items-center">
+                <!-- 로고 -->
+                <a href="#" class="font-serif text-xl tracking-widest text-brand-textmain">
+                    ONE <span class="font-sans font-light text-sm ml-1 text-brand-textsub">EDITION</span>
+                </a>
+                
+                <!-- 데스크탑 메뉴 -->
+                <div class="hidden md:flex space-x-12">
+                    <a href="#heritage" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Heritage</a>
+                    <a href="#amenities" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Amenities</a>
+                    <a href="#infrastructure" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Location</a>
+                    <a href="#investment" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Value</a>
+                </div>
+
+                <!-- 모바일 햄버거 버튼 -->
+                <button id="mobile-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 z-50 focus:outline-none">
+                    <span class="hamburger-line line-1 w-6 h-[1px] bg-brand-textmain block"></span>
+                    <span class="hamburger-line line-2 w-6 h-[1px] bg-brand-textmain block"></span>
+                    <span class="hamburger-line line-3 w-6 h-[1px] bg-brand-textmain block"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 모바일 전체화면 메뉴 -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-bg/95 backdrop-blur-sm z-40 flex flex-col justify-center items-center transition-opacity duration-500 opacity-0 pointer-events-none">
+            <div class="flex flex-col space-y-10 text-center">
+                <a href="#heritage" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">HERITAGE</a>
+                <a href="#amenities" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">AMENITIES</a>
+                <a href="#infrastructure" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">LOCATION</a>
+                <a href="#investment" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">VALUE</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 bg-brand-beige/20 z-0"></div>
+        
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center text-center">
+            <p class="font-sans font-light text-xs md:text-sm tracking-[0.4em] text-brand-textsub mb-8 fade-up uppercase">
+                The Essence of Serenity
+            </p>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.3] text-brand-textmain font-light mb-10 fade-up delay-100">
+                정제된 평온함,<br>
+                <span class="italic">본질에 닿는 하이엔드</span>
+            </h1>
+            <div class="w-[1px] h-24 bg-brand-textsub/30 mb-10 fade-up delay-200"></div>
+            <p class="font-sans font-light text-brand-textsub tracking-widest text-sm md:text-base fade-up delay-300">
+                GANGNAM ONE EDITION
+            </p>
+        </div>
+
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10 fade-up delay-400">
+            <p class="text-[10px] tracking-[0.2em] text-brand-silverdark uppercase mb-2 text-center">Scroll</p>
+            <div class="w-[1px] h-12 bg-brand-textsub/30 mx-auto overflow-hidden relative">
+                <div class="w-full h-full bg-brand-textmain absolute top-0 left-0 animate-[scrolldown_2s_ease-in-out_infinite]"></div>
+            </div>
+        </div>
+        <style>
+            @keyframes scrolldown {
+                0% { transform: translateY(-100%); }
+                50% { transform: translateY(0); }
+                100% { transform: translateY(100%); }
+            }
+        </style>
+    </header>
+
+    <section id="heritage" class="py-32 md:py-48 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-8 items-center">
+                <!-- 텍스트 영역 (여백 강조) -->
+                <div class="md:col-span-5 md:col-start-2 fade-up">
+                    <p class="font-sans text-xs tracking-[0.3em] text-brand-beigedark uppercase mb-6">Heritage</p>
+                    <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-8 font-light">
+                        상징의 자리에<br>
+                        가치를 새기다
+                    </h2>
+                    <div class="hairline mb-8 w-12"></div>
+                    <p class="font-sans font-light text-brand-textsub leading-loose text-sm mb-6">
+                        대한민국 VVIP들의 프라이빗 사교장으로 명성을 떨쳤던 <strong>(구)스포월드 부지</strong>. 강남의 역사와 품격이 깃든 이 특별한 자리에 원에디션이 들어섭니다.
+                    </p>
+                    <p class="font-sans font-light text-brand-textsub leading-loose text-sm">
+                        복잡한 도심 속에서 완벽히 독립된 프라이버시, 시대를 초월하는 미니멀리즘 건축 미학. 강남 최중심이라는 타이틀을 넘어 당신만의 고요한 성소가 완성됩니다.
+                    </p>
+                </div>
+                <!-- 미니멀 이미지 자리표시자 -->
+                <div class="md:col-span-5 md:col-start-8 fade-up delay-200">
+                    <div class="relative w-full aspect-[4/5] bg-brand-silver">
+                        <img src="https://placehold.co/800x1000/F3F4F6/9CA3AF?text=Heritage+Space" alt="스포월드 부지 헤리티지" class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply">
+                        <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-brand-beige -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="amenities" class="py-32 md:py-48 bg-brand-bg">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- 갤러리 타이틀 -->
+            <div class="text-center mb-24 fade-up">
+                <p class="font-sans text-xs tracking-[0.3em] text-brand-beigedark uppercase mb-4">In-Complex Amenities</p>
+                <h2 class="font-serif text-3xl md:text-4xl font-light">완벽한 일상을 위한 컬렉션</h2>
+            </div>
+
+            <!-- 갤러리형 배치 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                <!-- 피트니스 -->
+                <div class="fade-up">
+                    <div class="aspect-square bg-brand-silver mb-8 overflow-hidden group">
+                        <img src="https://placehold.co/800x800/EBE7E0/A39F98?text=Fitness+Wellness" alt="피트니스 센터" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
+                    </div>
+                    <h3 class="font-serif text-xl mb-3 font-light text-brand-textmain">하이엔드 피트니스 & 웰니스</h3>
+                    <div class="hairline mb-4"></div>
+                    <p class="font-sans font-light text-brand-textsub text-sm leading-relaxed">
+                        최고급 명품 기구가 배치된 대형 피트니스 센터. 요가, 필라테스 등 오직 입주민만을 위한 프라이빗 웰니스 인프라가 몸과 마음의 평온을 선사합니다.
+                    </p>
+                </div>
+
+                <!-- 메디컬 -->
+                <div class="fade-up delay-100 md:mt-16">
+                    <div class="aspect-square bg-brand-silver mb-8 overflow-hidden group">
+                        <img src="https://placehold.co/800x800/F3F4F6/9CA3AF?text=Medical+Care" alt="단지 내 의료시설" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
+                    </div>
+                    <h3 class="font-serif text-xl mb-3 font-light text-brand-textmain">단지 내 전문 메디컬 클리닉</h3>
+                    <div class="hairline mb-4"></div>
+                    <p class="font-sans font-light text-brand-textsub text-sm leading-relaxed">
+                        주거 공간 안에서 누리는 최상급 의료 서비스. 단지 내에 프리미엄 병원과 클리닉이 입점하여 멀리 나갈 필요 없는 안심 라이프를 제공합니다.
+                    </p>
+                </div>
+
+                <!-- 편의시설 -->
+                <div class="fade-up delay-200">
+                    <div class="aspect-square bg-brand-silver mb-8 overflow-hidden group">
+                        <img src="https://placehold.co/800x800/E5E5E5/737373?text=Premium+Lounge" alt="프리미엄 편의시설" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
+                    </div>
+                    <h3 class="font-serif text-xl mb-3 font-light text-brand-textmain">선별된 프리미엄 리테일</h3>
+                    <div class="hairline mb-4"></div>
+                    <p class="font-sans font-light text-brand-textsub text-sm leading-relaxed">
+                        하이엔드 다이닝, 카페, 프라이빗 라운지 등 철저하게 큐레이션 된 상업 시설이 단지 내에 마련되어 일상의 동선을 우아하게 완성합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="infrastructure" class="py-32 md:py-48 bg-white border-y border-brand-silver">
+        <div class="max-w-6xl mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 fade-up">
+                <div>
+                    <p class="font-sans text-xs tracking-[0.3em] text-brand-beigedark uppercase mb-4">Surrounding Infrastructure</p>
+                    <h2 class="font-serif text-3xl md:text-4xl font-light leading-tight">강남의 인프라를<br>정원으로 두다</h2>
+                </div>
+                <div class="mt-8 md:mt-0 font-sans font-light text-sm text-brand-textsub text-right">
+                    걸어서 누리는 최정상급 인프라
+                </div>
+            </div>
+
+            <!-- 리스트형 미니멀 레이아웃 -->
+            <div class="space-y-12">
+                <!-- 리스트 1 -->
+                <div class="flex flex-col md:flex-row items-baseline border-b border-brand-silver pb-12 fade-up">
+                    <div class="w-full md:w-1/3 mb-4 md:mb-0">
+                        <span class="font-serif text-3xl font-light text-brand-beige mr-4">01</span>
+                        <h4 class="font-serif text-xl text-brand-textmain inline-block">역삼·언주 먹자골목</h4>
+                    </div>
+                    <div class="w-full md:w-2/3 md:pl-12">
+                        <p class="font-sans font-light text-brand-textsub leading-relaxed">
+                            트렌디한 카페와 파인다이닝, 다양한 미식 문화가 어우러진 대형 먹자골목이 도보 거리에 위치해 있어 풍요로운 미식 생활을 지원합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 리스트 2 -->
+                <div class="flex flex-col md:flex-row items-baseline border-b border-brand-silver pb-12 fade-up delay-100">
+                    <div class="w-full md:w-1/3 mb-4 md:mb-0">
+                        <span class="font-serif text-3xl font-light text-brand-beige mr-4">02</span>
+                        <h4 class="font-serif text-xl text-brand-textmain inline-block">강남 차병원 의료권</h4>
+                    </div>
+                    <div class="w-full md:w-2/3 md:pl-12">
+                        <p class="font-sans font-light text-brand-textsub leading-relaxed">
+                            국내 최고 수준의 의료 서비스를 제공하는 강남 차병원이 바로 인접해 있어, 언제든 신속하고 수준 높은 의료 케어를 받을 수 있는 '메디세권' 프리미엄을 갖췄습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 리스트 3 -->
+                <div class="flex flex-col md:flex-row items-baseline border-b border-brand-silver pb-12 fade-up delay-200">
+                    <div class="w-full md:w-1/3 mb-4 md:mb-0">
+                        <span class="font-serif text-3xl font-light text-brand-beige mr-4">03</span>
+                        <h4 class="font-serif text-xl text-brand-textmain inline-block">라움아트센터</h4>
+                    </div>
+                    <div class="w-full md:w-2/3 md:pl-12">
+                        <p class="font-sans font-light text-brand-textsub leading-relaxed">
+                            도심 속 유럽 캐슬로 불리는 복합문화공간 '라움아트센터'가 곁에 있어 하이엔드 문화, 예술, 클래식 공연을 일상처럼 향유할 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="investment" class="py-32 md:py-48 bg-brand-bg">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-24 fade-up">
+                <p class="font-sans text-xs tracking-[0.3em] text-brand-beigedark uppercase mb-4">Investment Value</p>
+                <h2 class="font-serif text-3xl md:text-4xl font-light">변하지 않는 4가지 가치</h2>
+            </div>
+
+            <!-- 2x2 심플 그리드 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-silver">
+                <!-- Value 1 -->
+                <div class="bg-brand-bg p-12 md:p-16 fade-up">
+                    <p class="font-serif text-brand-beigedark text-lg italic mb-4">Value I.</p>
+                    <h3 class="font-serif text-2xl font-light mb-6">스포월드 부지의 상징성</h3>
+                    <p class="font-sans font-light text-brand-textsub text-sm leading-loose">
+                        강남 내에서도 가장 상징적이고 희소성 높은 대규모 부지. 역사와 명성이 깃든 자리는 시간이 지날수록 그 자산 가치가 배가됩니다.
+                    </p>
+                </div>
+                
+                <!-- Value 2 -->
+                <div class="bg-brand-bg p-12 md:p-16 fade-up delay-100">
+                    <p class="font-serif text-brand-beigedark text-lg italic mb-4">Value II.</p>
+                    <h3 class="font-serif text-2xl font-light mb-6">대체 불가한 하이엔드 수요</h3>
+                    <p class="font-sans font-light text-brand-textsub text-sm leading-loose">
+                        테헤란로 업무지구의 CEO, 대형 병원 의료진 등 강남 최상위 계층의 탄탄한 배후 수요를 독점하는 프리미엄 주거 상품입니다.
+                    </p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="bg-brand-bg p-12 md:p-16 fade-up">
+                    <p class="font-serif text-brand-beigedark text-lg italic mb-4">Value III.</p>
+                    <h3 class="font-serif text-2xl font-light mb-6">강남 중심권 지가 상승</h3>
+                    <p class="font-sans font-light text-brand-textsub text-sm leading-loose">
+                        역삼동, 언주역 일대의 풍부한 인프라와 지속적인 주변 환경 개선으로 장기적이고 안정적인 지가 상승 프리미엄을 기대할 수 있습니다.
+                    </p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="bg-brand-bg p-12 md:p-16 fade-up delay-100">
+                    <p class="font-serif text-brand-beigedark text-lg italic mb-4">Value IV.</p>
+                    <h3 class="font-serif text-2xl font-light mb-6">원스톱 라이프 프리미엄</h3>
+                    <p class="font-sans font-light text-brand-textsub text-sm leading-loose">
+                        피트니스, 병원, 상업시설을 모두 단지 내에 품은 원스톱 슬세권. 삶의 질을 높이는 독보적 설계가 곧 높은 자산 가치로 직결됩니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-brand-silver py-12">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
+            <div>
+                <a href="#" class="font-serif text-lg tracking-widest text-brand-textmain mb-2 block">
+                    ONE <span class="font-sans font-light text-xs text-brand-textsub">EDITION</span>
+                </a>
+                <p class="font-sans text-[11px] text-brand-silverdark font-light">
+                    본 사이트의 내용 및 이미지는 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있을 수 있습니다.
+                </p>
+            </div>
+            <div class="font-sans text-[11px] text-brand-silverdark font-light tracking-wider uppercase">
+                &copy; GANGNAM ONE EDITION. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. 네비게이션 스크롤 효과
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-4');
+                    navbar.classList.remove('bg-transparent', 'py-6');
+                } else {
+                    navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-4');
+                    navbar.classList.add('bg-transparent', 'py-6');
+                }
+            });
+
+            // 2. 모바일 메뉴 토글
+            const mobileBtn = document.getElementById('mobile-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            let isMenuOpen = false;
+
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                if (isMenuOpen) {
+                    mobileBtn.classList.add('menu-open');
+                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    mobileBtn.classList.remove('menu-open');
+                    mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+
+            mobileBtn.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // 3. 부드러운 스크롤 (앵커 이동)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
+                        const headerOffset = 80;
+                        const elementPosition = targetEl.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // 4. 스크롤 페이드 인 애니메이션 (Intersection Observer)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -10% 0px', // 화면 하단에서 10% 올라왔을 때 트리거
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // 한 번만 실행
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-up');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
