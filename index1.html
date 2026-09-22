@@ -98,6 +98,7 @@
                 <!-- 데스크탑 메뉴 -->
                 <div class="hidden md:flex space-x-12">
                     <a href="#heritage" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Heritage</a>
+                    <a href="#brands" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Brands</a>
                     <a href="#amenities" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Amenities</a>
                     <a href="#infrastructure" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Location</a>
                     <a href="#investment" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Value</a>
@@ -116,6 +117,7 @@
         <div id="mobile-menu" class="fixed inset-0 bg-brand-bg/95 backdrop-blur-sm z-40 flex flex-col justify-center items-center transition-opacity duration-500 opacity-0 pointer-events-none">
             <div class="flex flex-col space-y-10 text-center">
                 <a href="#heritage" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">HERITAGE</a>
+                <a href="#brands" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">BRANDS</a>
                 <a href="#amenities" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">AMENITIES</a>
                 <a href="#infrastructure" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">LOCATION</a>
                 <a href="#investment" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">VALUE</a>
@@ -173,19 +175,105 @@
                         복잡한 도심 속에서 완벽히 독립된 프라이버시, 시대를 초월하는 미니멀리즘 건축 미학. 강남 최중심이라는 타이틀을 넘어 당신만의 고요한 성소가 완성됩니다.
                     </p>
                 </div>
-<!-- 미니멀 이미지 자리표시자 -->
-<div class="md:col-span-5 md:col-start-8 fade-up delay-200">
-    <div class="relative w-full aspect-[4/5] bg-brand-silver">
-        <!-- grayscale 클래스를 제거했습니다 -->
-        <img src="./img/1.building.png" alt="스포월드 부지 헤리티지" class="w-full h-full object-cover">
-        <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-brand-beige -z-10"></div>
-    </div>
-</div>
+                <!-- 미니멀 이미지 자리표시자 -->
+                <div class="md:col-span-5 md:col-start-8 fade-up delay-200">
+                    <div class="relative w-full aspect-[4/5] bg-brand-silver">
+                        <img src="./img/1.building.png" alt="스포월드 부지 헤리티지" class="w-full h-full object-cover">
+                        <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-brand-beige -z-10"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="amenities" class="py-32 md:py-48 bg-brand-bg">
+    <!-- 시그니처 가구/가전 브랜드 섹션 추가 -->
+    <section id="brands" class="py-32 md:py-48 bg-brand-bg border-t border-brand-silver">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-24 fade-up">
+                <p class="font-sans text-xs tracking-[0.3em] text-brand-beigedark uppercase mb-4">Masterpiece Curation</p>
+                <h2 class="font-serif text-3xl md:text-4xl font-light leading-snug">
+                    시간이 지나도 변하지 않는<br>
+                    글로벌 명품 가구 & 가전 컬렉션
+                </h2>
+                <p class="font-sans font-light text-brand-textsub text-sm mt-6 max-w-2xl mx-auto leading-relaxed">
+                    세계 최정상 하이엔드 브랜드의 철학과 미학을 담아, 매일 머무는 모든 공간을 작품으로 완성합니다.
+                </p>
+            </div>
+
+            <!-- 브랜드 Grid (4 컬럼) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Brand 1: SieMatic -->
+                <div class="bg-white p-8 md:p-10 border border-brand-silver flex flex-col justify-between transition-all duration-500 hover:shadow-lg hover:-translate-y-1 fade-up">
+                    <div>
+                        <span class="font-serif text-xs text-brand-beigedark tracking-widest block mb-2 uppercase">Kitchen Furniture</span>
+                        <h3 class="font-serif text-2xl font-normal text-brand-textmain mb-4 tracking-wider">SieMatic</h3>
+                        <p class="font-sans font-medium text-xs text-brand-textsub mb-6 pb-4 border-b border-brand-silver">
+                            독일 최고급 명품 주방 가구
+                        </p>
+                        <p class="font-sans font-light text-brand-textsub text-xs leading-relaxed">
+                            100년 전통의 독일 프리미엄 주방 브랜드. 정교한 건축적 미학과 혁신적 수납 시스템으로 주방을 단순한 요리 공간 그 이상의 예술적 갤러리로 승화시킵니다.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-brand-silver/50 text-right">
+                        <span class="font-serif text-[11px] text-brand-silverdark italic">Germany</span>
+                    </div>
+                </div>
+
+                <!-- Brand 2: Rimadesio -->
+                <div class="bg-white p-8 md:p-10 border border-brand-silver flex flex-col justify-between transition-all duration-500 hover:shadow-lg hover:-translate-y-1 fade-up delay-100">
+                    <div>
+                        <span class="font-serif text-xs text-brand-beigedark tracking-widest block mb-2 uppercase">Space & Doors</span>
+                        <h3 class="font-serif text-2xl font-normal text-brand-textmain mb-4 tracking-wider">Rimadesio</h3>
+                        <p class="font-sans font-medium text-xs text-brand-textsub mb-6 pb-4 border-b border-brand-silver">
+                            이탈리아 하이엔드 공간 가구
+                        </p>
+                        <p class="font-sans font-light text-brand-textsub text-xs leading-relaxed">
+                            유리와 알루미늄을 다루는 미학의 정수. 투명한 감각과 극도의 미니멀리즘을 구현하는 슬라이딩 도어 및 드레스룸 시스템으로 탁 트인 공간감을 선사합니다.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-brand-silver/50 text-right">
+                        <span class="font-serif text-[11px] text-brand-silverdark italic">Italy</span>
+                    </div>
+                </div>
+
+                <!-- Brand 3: Gaggenau -->
+                <div class="bg-white p-8 md:p-10 border border-brand-silver flex flex-col justify-between transition-all duration-500 hover:shadow-lg hover:-translate-y-1 fade-up delay-200">
+                    <div>
+                        <span class="font-serif text-xs text-brand-beigedark tracking-widest block mb-2 uppercase">Built-in Appliance</span>
+                        <h3 class="font-serif text-2xl font-normal text-brand-textmain mb-4 tracking-wider">Gaggenau</h3>
+                        <p class="font-sans font-medium text-xs text-brand-textsub mb-6 pb-4 border-b border-brand-silver">
+                            전 세계 1%의 프리미엄 가전
+                        </p>
+                        <p class="font-sans font-light text-brand-textsub text-xs leading-relaxed">
+                            330여 년 역사를 지닌 독일 명품 빌트인 가전. 장인 정신과 최첨단 기술이 결합되어 미식가들과 셰프들이 열망하는 완벽한 키친 라이프를 제안합니다.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-brand-silver/50 text-right">
+                        <span class="font-serif text-[11px] text-brand-silverdark italic">Germany</span>
+                    </div>
+                </div>
+
+                <!-- Brand 4: Kohler -->
+                <div class="bg-white p-8 md:p-10 border border-brand-silver flex flex-col justify-between transition-all duration-500 hover:shadow-lg hover:-translate-y-1 fade-up delay-300">
+                    <div>
+                        <span class="font-serif text-xs text-brand-beigedark tracking-widest block mb-2 uppercase">Luxury Bath</span>
+                        <h3 class="font-serif text-2xl font-normal text-brand-textmain mb-4 tracking-wider">Kohler</h3>
+                        <p class="font-sans font-light text-xs text-brand-textsub mb-6 pb-4 border-b border-brand-silver">
+                            글로벌 럭셔리 욕실 브랜드
+                        </p>
+                        <p class="font-sans font-light text-brand-textsub text-xs leading-relaxed">
+                            150년간 전 세계 5성급 호텔과 VVIP 주거지를 채워온 미국의 대표적 럭셔리 욕실/수전 브랜드. 우아한 선과 독보적 기술력으로 스파 같은 휴식을 완성합니다.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-brand-silver/50 text-right">
+                        <span class="font-serif text-[11px] text-brand-silverdark italic">USA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="amenities" class="py-32 md:py-48 bg-white">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <!-- 갤러리 타이틀 -->
             <div class="text-center mb-24 fade-up">
@@ -219,17 +307,17 @@
                     </p>
                 </div>
 
-                <!-- 편의시설 -->
-                <div class="fade-up delay-200">
-                    <div class="aspect-square bg-brand-silver mb-8 overflow-hidden group">
-                        <img src="./img/4.service.png" alt="프리미엄 편의시설" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
-                    </div>
-                    <h3 class="font-serif text-xl mb-3 font-light text-brand-textmain">선별된 프리미엄 서비스</h3>
-                    <div class="hairline mb-4"></div>
-                    <p class="font-sans font-light text-brand-textsub text-sm leading-relaxed">
-                        하이엔드 다이닝, 카페, 프라이빗 라운지 등 철저하게 큐레이션 된 상업 시설이 단지 내에 마련되어 일상의 동선을 우아하게 완성합니다.
-                    </p>
-                </div>
+                <!-- 편의시설 -> 파노라마 조망 -->
+<div class="fade-up delay-200">
+    <div class="aspect-square bg-brand-silver mb-8 overflow-hidden group">
+        <img src="./img/4.home.jpg" alt="파노라마 시티 뷰" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
+    </div>
+    <h3 class="font-serif text-xl mb-3 font-light text-brand-textmain">파노라마 시티 조망</h3>
+    <div class="hairline mb-4"></div>
+    <p class="font-sans font-light text-brand-textsub text-sm leading-relaxed">
+        탁 트인 도심 전경과 아름다운 야경을 한눈에 담는 시그니처 파노라마 뷰. 매 순간 변화하는 시간과 계절의 아름다움을 거실 속 프라이빗 한 작품으로 누립니다.
+    </p>
+</div>
             </div>
         </div>
     </section>
