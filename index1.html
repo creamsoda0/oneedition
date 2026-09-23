@@ -77,84 +77,42 @@
             background-color: #E5E5E5;
             width: 100%;
         }
-
-        /* 햄버거 메뉴 애니메이션 */
-        .hamburger-line { transition: all 0.4s ease; }
-        .menu-open .line-1 { transform: translateY(6px) rotate(45deg); }
-        .menu-open .line-2 { opacity: 0; }
-        .menu-open .line-3 { transform: translateY(-6px) rotate(-45deg); }
     </style>
 </head>
-<body>
+<body class="pt-20">
 
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-transparent py-6">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="flex justify-between items-center">
-                <!-- 로고 -->
-                <a href="#" class="font-serif text-xl tracking-widest text-brand-textmain">
-                    ONE <span class="font-sans font-light text-sm ml-1 text-brand-textsub">EDITION</span>
-                </a>
-                
-                <!-- 데스크탑 메뉴 -->
-                <div class="hidden md:flex space-x-12">
-                    <a href="#heritage" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Heritage</a>
-                    <a href="#brands" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Brands</a>
-                    <a href="#amenities" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Amenities</a>
-                    <a href="#infrastructure" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Location</a>
-                    <a href="#investment" class="text-xs tracking-widest text-brand-textsub hover:text-brand-textmain transition duration-300 uppercase">Value</a>
-                </div>
+    <!-- Header & Mobile Menu -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between bg-white relative z-50">
+            <!-- 로고 -->
+            <a href="#" class="font-serif text-xl font-bold tracking-widest text-gray-900">
+                ONE EDITION
+            </a>
 
-                <!-- 모바일 햄버거 버튼 -->
-                <button id="mobile-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 z-50 focus:outline-none">
-                    <span class="hamburger-line line-1 w-6 h-[1px] bg-brand-textmain block"></span>
-                    <span class="hamburger-line line-2 w-6 h-[1px] bg-brand-textmain block"></span>
-                    <span class="hamburger-line line-3 w-6 h-[1px] bg-brand-textmain block"></span>
-                </button>
-            </div>
+            <!-- 데스크톱 메뉴 -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700">
+                <a href="#heritage" class="hover:text-amber-700 transition">HERITAGE</a>
+                <a href="#brands" class="hover:text-amber-700 transition">BRANDS</a>
+                <a href="#amenities" class="hover:text-amber-700 transition">AMENITIES</a>
+                <a href="#infrastructure" class="hover:text-amber-700 transition">LOCATION</a>
+                <a href="#investment" class="hover:text-amber-700 transition">VALUE</a>
+            </nav>
+
+            <!-- 모바일 햄버거 버튼 -->
+            <button id="menu-btn" class="md:hidden text-2xl text-gray-900 focus:outline-none p-2" aria-label="메뉴 열기">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
         </div>
 
-        <!-- 모바일 전체화면 메뉴 -->
-        <div id="mobile-menu" class="fixed inset-0 bg-brand-bg/95 backdrop-blur-sm z-40 flex flex-col justify-center items-center transition-opacity duration-500 opacity-0 pointer-events-none">
-            <div class="flex flex-col space-y-10 text-center">
-                <a href="#heritage" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">HERITAGE</a>
-                <a href="#brands" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">BRANDS</a>
-                <a href="#amenities" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">AMENITIES</a>
-                <a href="#infrastructure" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">LOCATION</a>
-                <a href="#investment" class="mobile-link font-serif text-2xl tracking-widest text-brand-textmain hover:text-brand-beigedark transition">VALUE</a>
-            </div>
+        <!-- 모바일 드롭다운 메뉴 -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-2xl z-50 px-6 py-8 space-y-6 text-center">
+            <a href="#heritage" class="mobile-link block font-serif text-lg text-gray-900 tracking-widest hover:text-amber-700 border-b border-gray-100 pb-4">HERITAGE</a>
+            <a href="#brands" class="mobile-link block font-serif text-lg text-gray-900 tracking-widest hover:text-amber-700 border-b border-gray-100 pb-4">BRANDS</a>
+            <a href="#amenities" class="mobile-link block font-serif text-lg text-gray-900 tracking-widest hover:text-amber-700 border-b border-gray-100 pb-4">AMENITIES</a>
+            <a href="#infrastructure" class="mobile-link block font-serif text-lg text-gray-900 tracking-widest hover:text-amber-700 border-b border-gray-100 pb-4">LOCATION</a>
+            <a href="#investment" class="mobile-link block font-serif text-lg text-gray-900 tracking-widest hover:text-amber-700">VALUE</a>
         </div>
-    </nav>
-
-<!-- Header & Mobile Menu 전체 교체 -->
-<header class="fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between bg-white relative z-50">
-        <!-- 로고 -->
-        <a href="#" class="font-serif text-xl font-bold tracking-widest text-gray-900">
-            ONE EDITION
-        </a>
-
-        <!-- 데스크톱 메뉴 -->
-        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700">
-            <a href="#heritage" class="hover:text-amber-700 transition">HERITAGE</a>
-            <a href="#amenities" class="hover:text-amber-700 transition">AMENITIES</a>
-            <a href="#location" class="hover:text-amber-700 transition">LOCATION</a>
-            <a href="#investment" class="hover:text-amber-700 transition">VALUE</a>
-        </nav>
-
-        <!-- 모바일 햄버거 버튼 -->
-        <button id="menu-btn" class="md:hidden text-2xl text-gray-900 focus:outline-none p-2" aria-label="메뉴 열기">
-            <i class="fa-solid fa-bars" id="menu-icon"></i>
-        </button>
-    </div>
-
-    <!-- 모바일 드롭다운 메뉴 (불투명 배경 bg-white & absolute top-full & shadow-2xl 적용) -->
-    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-2xl z-50 px-6 py-8 space-y-6 text-center">
-        <a href="#heritage" class="block font-serif text-lg text-gray-900 tracking-widest hover:text-amber-700 border-b border-gray-100 pb-4">HERITAGE</a>
-        <a href="#amenities" class="block font-serif text-lg text-gray-900 tracking-widest hover:text-amber-700 border-b border-gray-100 pb-4">AMENITIES</a>
-        <a href="#location" class="block font-serif text-lg text-gray-900 tracking-widest hover:text-amber-700 border-b border-gray-100 pb-4">LOCATION</a>
-        <a href="#investment" class="block font-serif text-lg text-gray-900 tracking-widest hover:text-amber-700">VALUE</a>
-    </div>
-</header>
+    </header>
 
     <section id="heritage" class="py-32 md:py-48 bg-white">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
@@ -185,7 +143,7 @@
         </div>
     </section>
 
-<!-- 시그니처 가구/가전 브랜드 섹션 추가 -->
+    <!-- 시그니처 가구/가전 브랜드 섹션 -->
     <section id="brands" class="py-32 md:py-48 bg-brand-bg border-t border-brand-silver">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="text-center mb-24 fade-up">
@@ -300,7 +258,7 @@
                 <h2 class="font-serif text-3xl md:text-4xl font-light">완벽한 일상을 위한 컬렉션</h2>
             </div>
 
-			<!-- 갤러리형 배치 -->
+            <!-- 갤러리형 배치 -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
                 <!-- 피트니스 -->
                 <div class="fade-up">
@@ -314,7 +272,7 @@
                     </p>
                 </div>
 
-			<!-- 메디컬 -->
+                <!-- 메디컬 -->
                 <div class="fade-up delay-100 md:mt-16">
                     <div class="aspect-square bg-brand-silver mb-8 overflow-hidden group">
                         <img src="./img/3.medical.png" alt="단지 내 의료시설" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
@@ -326,17 +284,17 @@
                     </p>
                 </div>
 
-                <!-- 편의시설 -> 파노라마 조망 -->
-<div class="fade-up delay-200">
-    <div class="aspect-square bg-brand-silver mb-8 overflow-hidden group">
-        <img src="./img/4.home.jpg" alt="파노라마 시티 뷰" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
-    </div>
-    <h3 class="font-serif text-xl mb-3 font-light text-brand-textmain">파노라마 시티 조망</h3>
-    <div class="hairline mb-4"></div>
-    <p class="font-sans font-light text-brand-textsub text-sm leading-relaxed">
-        탁 트인 도심 전경과 아름다운 야경을 한눈에 담는 시그니처 파노라마 뷰. 매 순간 변화하는 시간과 계절의 아름다움을 거실 속 프라이빗 한 작품으로 누립니다.
-    </p>
-</div>
+                <!-- 파노라마 조망 -->
+                <div class="fade-up delay-200">
+                    <div class="aspect-square bg-brand-silver mb-8 overflow-hidden group">
+                        <img src="./img/4.home.jpg" alt="파노라마 시티 뷰" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
+                    </div>
+                    <h3 class="font-serif text-xl mb-3 font-light text-brand-textmain">파노라마 시티 조망</h3>
+                    <div class="hairline mb-4"></div>
+                    <p class="font-sans font-light text-brand-textsub text-sm leading-relaxed">
+                        탁 트인 도심 전경과 아름다운 야경을 한눈에 담는 시그니처 파노라마 뷰. 매 순간 변화하는 시간과 계절의 아름다움을 거실 속 프라이빗 한 작품으로 누립니다.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -353,7 +311,7 @@
                 </div>
             </div>
 
-		<!-- 리스트형 미니멀 레이아웃 -->
+            <!-- 리스트형 미니멀 레이아웃 -->
             <div class="space-y-12">
                 <!-- 리스트 1 -->
                 <div class="flex flex-col md:flex-row items-baseline border-b border-brand-silver pb-12 fade-up">
@@ -464,43 +422,44 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // 1. 네비게이션 스크롤 효과
-            const navbar = document.getElementById('navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-4');
-                    navbar.classList.remove('bg-transparent', 'py-6');
-                } else {
-                    navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-4');
-                    navbar.classList.add('bg-transparent', 'py-6');
-                }
-            });
-
-            // 2. 모바일 메뉴 토글
-            const mobileBtn = document.getElementById('mobile-btn');
+            // 1. 모바일 메뉴 토글
+            const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
             const mobileLinks = document.querySelectorAll('.mobile-link');
-            let isMenuOpen = false;
 
             function toggleMenu() {
-                isMenuOpen = !isMenuOpen;
-                if (isMenuOpen) {
-                    mobileBtn.classList.add('menu-open');
-                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
-                    document.body.style.overflow = 'hidden';
+                if (!mobileMenu) return;
+                
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    if (menuIcon) {
+                        menuIcon.classList.remove('fa-bars');
+                        menuIcon.classList.add('fa-xmark');
+                    }
                 } else {
-                    mobileBtn.classList.remove('menu-open');
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-                    document.body.style.overflow = 'auto';
+                    mobileMenu.classList.add('hidden');
+                    if (menuIcon) {
+                        menuIcon.classList.remove('fa-xmark');
+                        menuIcon.classList.add('fa-bars');
+                    }
                 }
             }
 
-            mobileBtn.addEventListener('click', toggleMenu);
+            if (menuBtn) {
+                menuBtn.addEventListener('click', toggleMenu);
+            }
+
             mobileLinks.forEach(link => {
-                link.addEventListener('click', toggleMenu);
+                link.addEventListener('click', () => {
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
             });
 
-            // 3. 부드러운 스크롤 (앵커 이동)
+            // 2. 부드러운 스크롤 (앵커 이동)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -521,10 +480,10 @@
                 });
             });
 
-            // 4. 스크롤 페이드 인 애니메이션 (Intersection Observer)
+            // 3. 스크롤 페이드 인 애니메이션 (Intersection Observer)
             const observerOptions = {
                 root: null,
-                rootMargin: '0px 0px -10% 0px', // 화면 하단에서 10% 올라왔을 때 트리거
+                rootMargin: '0px 0px -10% 0px',
                 threshold: 0.1
             };
 
@@ -532,7 +491,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target); // 한 번만 실행
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
