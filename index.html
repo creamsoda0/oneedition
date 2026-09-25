@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강남 원에디션 | 퓨어 앤 미니멀</title>
+    <title>UN-LIST</title>
     
     <!-- 폰트: Noto Serif KR (명조체/제목용), Noto Sans KR (고딕체/본문용) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -115,67 +115,148 @@
     </header>
 
 <!-- ================= UN-LIST PRIVATE COLLECTION SECTION ================= -->
-<section id="about-unlist" class="py-20 md:py-36 bg-[#0D0D0D] text-white relative overflow-hidden">
-    <!-- 배경 은은한 광원 효과 (모바일 대응) -->
-    <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#C5A880]/5 blur-[90px] md:blur-[120px] rounded-full pointer-events-none"></div>
+<section id="about-unlist" class="py-12 md:py-20 bg-[#0D0D0D] text-white relative overflow-hidden">
+    <!-- 은은하게 스며드는 배경 광원 -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#C5A880]/5 blur-[140px] rounded-full pointer-events-none"></div>
 
-    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <!-- grid-cols-1 (모바일: 세로 배치) / lg:grid-cols-12 (데스크톱: 가로 배치) -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <!-- 왼쪽: UN-LIST 브랜드 로고 영역 (크기 확대) -->
-            <div class="lg:col-span-5 fade-up flex flex-col items-center justify-center p-6 sm:p-10 md:p-12 rounded-2xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/10 backdrop-blur-sm">
-                
-                <!-- 로고 이미지 영역: 너비를 키우고 반응형 max-width 적용 -->
-                <div class="w-full max-w-[280px] sm:max-w-xs md:max-w-sm mb-6 overflow-hidden rounded-xl shadow-2xl">
-                    <img src="./img/logo.jpg" alt="UN-LIST Logo" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500">
+            <!-- 왼쪽: 로고 이미지 (외곽 박스 제거) -->
+            <div class="lg:col-span-5 fade-up flex flex-col items-center">
+                <div class="w-full max-w-[220px] sm:max-w-[260px] mb-4">
+                    <img src="./img/logo.jpg" alt="UN-LIST Logo" class="w-full h-auto object-cover rounded-xl shadow-2xl opacity-90 hover:opacity-100 transition-opacity duration-300">
                 </div>
-                
-                <p class="font-sans text-[11px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] text-[#C5A880] uppercase font-light text-center">
+                <p class="font-cinzel text-[11px] tracking-[0.3em] text-[#C5A880] uppercase font-light text-center">
                     Private Off-Market Real Estate
                 </p>
             </div>
 
-            <!-- 오른쪽: 프라이빗 소제목 및 세부 설명 -->
-            <div class="lg:col-span-7 lg:pl-4 fade-up delay-200">
-                <p class="font-sans text-xs tracking-[0.3em] text-[#C5A880] uppercase mb-3 sm:mb-4">
+            <!-- 오른쪽: 본문 및 핵심 포인트 -->
+            <div class="lg:col-span-7 fade-up delay-200 text-left">
+                <p class="font-sans text-xs tracking-[0.25em] text-[#C5A880] uppercase mb-3">
                     Exclusive Selection
                 </p>
                 
-                <h2 class="font-serif text-2xl sm:text-3xl md:text-5xl leading-tight font-light mb-6 md:mb-8 text-neutral-100">
-                    어디에서도 만나볼 수 없는<br class="hidden sm:inline">
-                    <span class="text-[#C5A880] font-normal">오직 단 하나의 라인업</span>
+                <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl leading-tight font-light mb-4 text-neutral-100">
+                    어디에서도 찾지 못했던 가격,<br>
+                    <span class="text-[#C5A880] font-normal">최상위 하이엔드를 만나다</span>
                 </h2>
 
-                <div class="w-12 h-[1px] bg-[#C5A880]/50 mb-6 md:mb-8"></div>
-
-                <p class="font-sans font-light text-neutral-300 leading-relaxed text-sm md:text-lg mb-4 md:mb-6">
-                    <strong>UN-LIST</strong>는 대중에게 공개되지 않는 최상위 비공개(Off-Market) 프라이빗 자산만을 엄선하여 선보입니다. 
+                <p class="font-sans font-light text-neutral-300 text-sm md:text-base leading-relaxed mb-8">
+                    <strong>UN-LIST</strong>는 철저히 보안이 유지되는 비공개(Off-Market) 채널을 통해서만 안내됩니다. 대중에게 공개되지 않은 파격적인 가격 조건으로 최상위 하이엔드 주거 자산의 가치를 선점하세요.
                 </p>
 
-                <p class="font-sans font-light text-neutral-400 leading-relaxed text-xs sm:text-sm md:text-base mb-8 md:mb-10">
-                    그 어떠한 일반 부동산 시장이나 매체에서도 접근할 수 없었던 독보적인 가격 혜택과 희소성. 오직 선택받은 소수에게만 한정되어 제공되는 비공개 컬렉션을 통해 차원이 다른 주거 가치와 특권을 경험해 보세요.
-                </p>
-
-                <!-- 핵심 가치 3가지 포인트 (모바일 세로, 태블릿 이상 가로 배치) -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/10">
+                <!-- 3가지 핵심 포인트 (얇은 구분선으로 연결) -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/15">
                     <div>
-                        <h4 class="font-serif text-[#C5A880] text-base md:text-lg mb-1">100% Off-Market</h4>
-                        <p class="font-sans text-xs text-neutral-400 font-light">시장에 유출되지 않는 철저한 비공개 매물</p>
+                        <h4 class="font-serif text-[#C5A880] text-sm sm:text-base font-medium mb-1">100% Off-Market</h4>
+                        <p class="font-sans text-xs text-neutral-400 font-light leading-snug">외부 유출 없는 비공개 매물</p>
                     </div>
                     <div>
-                        <h4 class="font-serif text-[#C5A880] text-base md:text-lg mb-1">Unmatched Price</h4>
-                        <p class="font-sans text-xs text-neutral-400 font-light">다른 곳에서 볼 수 없는 독보적 가격 조건</p>
+                        <h4 class="font-serif text-[#C5A880] text-sm sm:text-base font-medium mb-1">Unmatched Price</h4>
+                        <p class="font-sans text-xs text-neutral-400 font-light leading-snug">비교 불가능한 독보적 가격 조건</p>
                     </div>
                     <div>
-                        <h4 class="font-serif text-[#C5A880] text-base md:text-lg mb-1">Strict Confidential</h4>
-                        <p class="font-sans text-xs text-neutral-400 font-light">1:1 보안 기반의 프라이빗 큐레이션</p>
+                        <h4 class="font-serif text-[#C5A880] text-sm sm:text-base font-medium mb-1">Strict Confidential</h4>
+                        <p class="font-sans text-xs text-neutral-400 font-light leading-snug">1:1 프라이빗 보안 큐레이션</p>
                     </div>
                 </div>
 
             </div>
 
         </div>
+    </div>
+</section>
+
+<!-- WHY UN-LIST SECTION (왜 UN-LIST에 맡겨야 하는가) -->
+<section id="why-unlist" class="py-16 md:py-28 bg-brand-bg relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6 md:px-12">
+        
+        <!-- 헤더 영역 (여백 축소) -->
+        <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16 fade-up">
+            <p class="font-cinzel text-xs tracking-[0.3em] text-brand-golddark uppercase mb-3 font-semibold">
+                Why Choose UN-LIST
+            </p>
+            <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-light leading-tight text-brand-textmain mb-4">
+                왜 자산 거래를 <span class="font-normal text-[#8C7355]">UN-LIST에 맡겨야 하는가</span>
+            </h2>
+            <div class="w-12 h-[1px] bg-brand-gold/60 mx-auto mb-4"></div>
+            <p class="font-sans font-light text-brand-textsub text-xs sm:text-sm leading-relaxed">
+                프라이빗 부동산 자산 매매는 일반 중개와 달라야 합니다.<br class="hidden sm:inline">
+                보안부터 가치 브랜딩, VVIP 네트워크 매칭까지 오직 UN-LIST만의 차별화된 시스템을 제공합니다.
+            </p>
+        </div>
+
+        <!-- 4대 핵심 강점 간결한 목록 (List Layout) -->
+        <div class="border-y border-brand-silver/80 divide-y divide-brand-silver/60 fade-up">
+            
+            <!-- List Item 1 -->
+            <div class="py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-8 hover:bg-white/40 transition-colors px-2 sm:px-4 rounded-lg">
+                <div class="flex items-center gap-4 md:w-5/12 shrink-0">
+                    
+                    <div class="w-9 h-9 rounded-full bg-brand-silver/60 flex items-center justify-center text-brand-golddark shrink-0">
+                        <i class="fa-solid fa-user-shield text-sm"></i>
+                    </div>
+                    <h3 class="font-serif text-lg md:text-xl font-normal text-brand-textmain tracking-tight">
+                        100% 비공개 보안 케어
+                    </h3>
+                </div>
+                <p class="font-sans font-light text-brand-textsub text-xs sm:text-sm leading-relaxed md:w-7/12">
+                    포털이나 오픈 시장에 자산 정보가 유출되지 않도록 철저한 보안을 유지합니다. 소유주의 프라이버시를 지키고 자산 가치 하락 및 소문을 사전에 차단합니다.
+                </p>
+            </div>
+
+            <!-- List Item 2 -->
+            <div class="py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-8 hover:bg-white/40 transition-colors px-2 sm:px-4 rounded-lg">
+                <div class="flex items-center gap-4 md:w-5/12 shrink-0">
+                    
+                    <div class="w-9 h-9 rounded-full bg-brand-silver/60 flex items-center justify-center text-brand-golddark shrink-0">
+                        <i class="fa-solid fa-gem text-sm"></i>
+                    </div>
+                    <h3 class="font-serif text-lg md:text-xl font-normal text-brand-textmain tracking-tight">
+                        하이엔드 자산 브랜딩
+                    </h3>
+                </div>
+                <p class="font-sans font-light text-brand-textsub text-xs sm:text-sm leading-relaxed md:w-7/12">
+                    공간의 건축적 헤리티지와 희소성을 전문 분석하여 정밀 브랜딩합니다. 단순 매물이 아닌 '희소성 있는 자산'으로 정당한 가치를 평가받게 합니다.
+                </p>
+            </div>
+
+            <!-- List Item 3 -->
+            <div class="py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-8 hover:bg-white/40 transition-colors px-2 sm:px-4 rounded-lg">
+                <div class="flex items-center gap-4 md:w-5/12 shrink-0">
+                    
+                    <div class="w-9 h-9 rounded-full bg-brand-silver/60 flex items-center justify-center text-brand-golddark shrink-0">
+                        <i class="fa-solid fa-users-between-lines text-sm"></i>
+                    </div>
+                    <h3 class="font-serif text-lg md:text-xl font-normal text-brand-textmain tracking-tight">
+                        검증된 VVIP 프라이빗 매칭
+                    </h3>
+                </div>
+                <p class="font-sans font-light text-brand-textsub text-xs sm:text-sm leading-relaxed md:w-7/12">
+                    허위 문의를 배제하고 실질적 자산 매수 능력을 갖춘 1% 고소득층 및 VVIP 고객 풀을 대상으로만 1:1 맞춤형 프라이빗 매칭을 진행합니다.
+                </p>
+            </div>
+
+            <!-- List Item 4 -->
+            <div class="py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-8 hover:bg-white/40 transition-colors px-2 sm:px-4 rounded-lg">
+                <div class="flex items-center gap-4 md:w-5/12 shrink-0">
+                    
+                    <div class="w-9 h-9 rounded-full bg-brand-silver/60 flex items-center justify-center text-brand-golddark shrink-0">
+                        <i class="fa-solid fa-handshake-angle text-sm"></i>
+                    </div>
+                    <h3 class="font-serif text-lg md:text-xl font-normal text-brand-textmain tracking-tight">
+                        전담 마스터 원스톱 케어
+                    </h3>
+                </div>
+                <p class="font-sans font-light text-brand-textsub text-xs sm:text-sm leading-relaxed md:w-7/12">
+                    매도·매수 절차부터 법률, 세무, 금융 검토까지 전문 마스터팀이 1:1 밀착 진행하여 거래 전 과정의 리스크를 완벽하게 관리합니다.
+                </p>
+            </div>
+
+        </div>
+
     </div>
 </section>
 
@@ -190,7 +271,7 @@
     <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-8 font-light">
                     UN-LIST가 엄선한 공간을 소개합니다.
                 </h2>
-    <p class="signpost-subtext">아래에서 상세 정보와 가치를 확인하실 수 있습니다.</p>
+    <p class="signpost-subtext">아래에서 이번 현장의 상세 정보와 가치를 확인하실 수 있습니다.</p>
     
     <div class="scroll-indicator">
       <span class="indicator-line"></span>
@@ -702,6 +783,57 @@
             </div>
         </div>
     </section>
+    
+<section>
+    <!-- 하단 큐레이션 매각/매수 문의 하이라이트 -->
+    <div class="max-w-4xl mx-auto mt-20 p-8 sm:p-12 bg-[#0D0D0D] rounded-2xl text-white text-center fade-up flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="text-left">
+            <span class="font-cinzel text-xs tracking-widest text-[#C5A880] uppercase block mb-2">Private Consultation</span>
+            <h4 class="font-serif text-xl sm:text-2xl font-light">비공개 자산 1:1 컨설팅</h4>
+            <p class="font-sans text-xs sm:text-sm text-neutral-400 font-light mt-2">소중한 자산의 가치를 지키는 맞춤형 솔루션을 제안해 드립니다.</p>
+        </div>
+        
+        <!-- 디바이스 분기 처리된 함수 실행 -->
+        <button onclick="showPhoneConsultation()" class="inline-flex items-center gap-3 px-8 py-4 bg-[#C5A880] hover:bg-[#b0936b] text-neutral-900 font-medium text-sm transition-all rounded-lg shrink-0 cursor-pointer">
+            <span>비공개 자산 문의하기</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+        </button>
+    </div>
+</section>
+
+<!-- 모바일/PC 분기 처리 스크립트 -->
+<script>
+function showPhoneConsultation() {
+    const phoneNumber = "010-2519-0877";
+    
+    // 모바일 기기 여부 감지 (Android, iOS 등)
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // [모바일] confirm 창 표시 후 확인 누르면 전화 걸기 연결
+        const mobileMessage = `[UN-LIST 비공개 자산 1:1 컨설팅]\n\n` +
+                              `담당자 유선 문의: ${phoneNumber}\n\n` +
+                              `* 프라이빗 보안 유지를 위해 유선 연결 시 1:1 맞춤 상담이 바로 시작됩니다.\n` +
+                              `* 전화가 어려울 경우 문자를 남겨주세요.\n\n` +
+                              `지금 담당자에게 전화를 연결하시겠습니까?`;
+
+        if (confirm(mobileMessage)) {
+            window.location.href = `tel:${phoneNumber.replace(/-/g, '')}`;
+        }
+    } else {
+        // [PC] 클립보드 복사 후 안내 alert만 표시 (전화 걸기 연결 안 함)
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(phoneNumber);
+        }
+
+        const pcMessage = `[UN-LIST 비공개 자산 1:1 컨설팅]\n\n` +
+                          `담당자 유선 문의: ${phoneNumber}\n` +
+                          `* 전화가 어려울 경우 문자를 남겨주세요.`;
+
+        alert(pcMessage);
+    }
+}
+</script>
 
     <footer class="bg-white border-t border-brand-silver py-12">
         <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
